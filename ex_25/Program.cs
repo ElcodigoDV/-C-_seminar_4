@@ -4,35 +4,37 @@
 3, 5 -> 243 (3⁵)
 2, 4 -> 16 */
 
-/* int NumToPow(array)
+int NumToPow(int [] array)
 {
-    int lenght = array.Lenght
+    int lenght = array.Length;
     int a = array [0];
     int b = array [1];
     int result = a;
-    while (int i = 1, i < b)
+    int i = 1;
+    while (i < b)
     {
         result = result *a;
-        i ++
+        i ++;
     }
     return result;
 }
- */
-int GetArray(string text)
+
+int [] GetArray(string text)
 {
     Console.WriteLine(text);
     int[] numbers = new int[2];
-    string[] str = Console.ReadLine().Split(",");
+    string [] str = Console.ReadLine().Split(",");
     
-    for (int i = 0; i < numbers.Length; i++)
+    for (int i = 0; i < str.Length; i++)
     {
         numbers[i] = Int32.Parse(str[i]);
     }
     return numbers;
 }
 
-string arr = GetArray("Введите два числа через запятую a,b");
+int [] arr = GetArray("Введите два числа через запятую a,b");
 int result = NumToPow(arr);
-Console.WriteLine(result);
+string strArr = String.Join(", ", arr);
+Console.WriteLine($"{strArr} -> {result}");
 
 // Console.WriteLine(arr);
