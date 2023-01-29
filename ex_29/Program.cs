@@ -6,15 +6,16 @@
 void PrintArr(int [] array)
 {
     int k = array.Length;
+    Console.Write("[");
     for (int j = 0; j < k; j++)
     {
         if (j == k-1)
         {
-            Console.Write($"{array[j]}");
+            Console.Write($"{array[j]}]");
         }
         else
         {
-            Console.Write($"{array[j]},");
+            Console.Write($"{array[j]}, ");
         }
     }
 }
